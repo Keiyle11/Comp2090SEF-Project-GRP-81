@@ -1,3 +1,4 @@
+#Hotel Management System
 This is a management system that has a total of 4 classes: Hotel, Guest, Rooms and Reservation. 
 
 The Hotel Class is responsible for managing the lists of Guests, reservations and rooms as it coantains methods that are able to register guests, show the list of objects it has, reserve a room to a guest, add rooms, calculate price after checking out and more.
