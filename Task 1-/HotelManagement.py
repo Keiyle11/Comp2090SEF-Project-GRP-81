@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar  8 16:56:51 2026
-
-@author: Keiyle
-"""
-
 from datetime import datetime
 
 class Room:
