@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 def cocktailSort(a):
     Length = len(a)
     swapped = True
