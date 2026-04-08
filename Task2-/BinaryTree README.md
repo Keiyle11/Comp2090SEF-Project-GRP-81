@@ -1,3 +1,4 @@
+# Binary Tree
 The Binary Tree is a data structure where each node can containa value and a maximum of two children. These children would also have a maximum of two children. This data structure is efficient in data organisation, sorting, searching and more. 
 
 Here are some of the sorting algorithms that navigate through the binary tree\
