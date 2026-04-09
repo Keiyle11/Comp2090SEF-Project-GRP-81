@@ -11,5 +11,7 @@ In-order starts from the left-most node and works its way up to the root node, n
 Post-order goes through a binary tree's left subtree starting from the left-most node, then goes through the right subtree starting from the right most node. Lastly, the order would list the root node.
 
 ## Function
+The code showcases multiple orders that goes through a binary tree.
 
 ## Installation
+Simply intall and run.
