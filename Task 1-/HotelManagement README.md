@@ -12,3 +12,6 @@ This project's purpose is to simulate a real hotel management system and may als
 
 ## Installation
 To use this project, simply install and run.
+
+## User Guide
+Once installed, the program is ready to be used immediately.
