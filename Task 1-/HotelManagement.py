@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from abc import ABC, abstractmethod
 
@@ -194,12 +193,22 @@ class Hotel:
                 break
         
         if not coupon:
-            print(f"Coupon '{coupon_code}' not found or already used!")
+            print(f"Coupon '{coupon_code}' not found or all instances are already used!")
             return False
         
-        self.available_coupons.remove(coupon)
-        guest.add_coupon(coupon)
-        return True
+        new_coupon = None
+        if isinstance(coupon, PercentageCoupon):
+            new_coupon = PercentageCoupon(coupon.code, coupon.description, coupon.percentage)
+        elif isinstance(coupon, FixedAmountCoupon):
+            new_coupon = FixedAmountCoupon(coupon.code, coupon.description, coupon.amount_off)
+        elif isinstance(coupon, FreeNightCoupon):
+            new_coupon = FreeNightCoupon(coupon.code, coupon.description)
+        
+        if new_coupon:
+            guest.add_coupon(new_coupon)
+            return True
+        
+        return False
     
     def show_all_rooms(self):
         print("\nAll Rooms:")
