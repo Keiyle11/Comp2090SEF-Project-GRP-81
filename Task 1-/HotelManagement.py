@@ -323,7 +323,6 @@ def main():
     
     print("\n=== Creating Promotional Coupons ===")
     hotel.create_coupon("percentage", "SAVE10", "10% off your stay", 10)
-    hotel.create_coupon("percentage", "SUMMER20", "20% summer special", 20)
     hotel.create_coupon("fixed", "SAVE50", "$50 off total booking", 50)
     hotel.create_coupon("freenight", "FREE1", "One free night", None)
     
