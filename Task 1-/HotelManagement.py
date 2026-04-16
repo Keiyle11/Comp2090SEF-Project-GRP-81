@@ -33,7 +33,7 @@ class DiscountCoupon(ABC):
         self.is_used = False
     
     @abstractmethod
-    def apply_discount(self, total_cost):
+    def apply_discount(self, total_cost, nightly_rate=None, nights=None):
         pass
     
     @abstractmethod
@@ -55,7 +55,7 @@ class PercentageCoupon(DiscountCoupon):
         super().__init__(code, description)
         self.percentage = percentage
     
-    def apply_discount(self, total_cost):
+    def apply_discount(self, total_cost, nightly_rate=None, nights=None):
         discount_amount = total_cost * (self.percentage / 100)
         return total_cost - discount_amount
     
@@ -67,7 +67,7 @@ class FixedAmountCoupon(DiscountCoupon):
         super().__init__(code, description)
         self.amount_off = amount_off
     
-    def apply_discount(self, total_cost):
+    def apply_discount(self, total_cost, nightly_rate=None, nights=None):
         return max(0, total_cost - self.amount_off)
     
     def get_discount_info(self):
@@ -77,16 +77,13 @@ class FreeNightCoupon(DiscountCoupon):
     def __init__(self, code, description):
         super().__init__(code, description)
     
-    def apply_discount(self, total_cost):
+    def apply_discount(self, total_cost, nightly_rate=None, nights=None):
+        if nights and nights >= 2 and nightly_rate:
+            return total_cost - nightly_rate
         return total_cost
     
     def get_discount_info(self):
         return "One free night"
-    
-    def calculate_free_night_discount(self, nightly_rate, nights):
-        if nights >= 2:
-            return nightly_rate
-        return 0
 
 class Guest:
     def __init__(self, guest_id, name, email, phone):
@@ -122,15 +119,13 @@ class Reservation:
         self.total_cost = self.original_total
         
         if discount_coupon and not discount_coupon.is_used:
-            if isinstance(discount_coupon, FreeNightCoupon):
-                discount = discount_coupon.calculate_free_night_discount(nightly_rate, nights)
-                self.total_cost -= discount
-                discount_coupon.use_coupon()
-                print(f"   Free night coupon applied! Saved: ${discount:.2f}")
-            else:
-                self.total_cost = discount_coupon.apply_discount(self.original_total)
-                discount_coupon.use_coupon()
-                print(f"   Coupon '{discount_coupon.code}' applied! Saved: ${self.original_total - self.total_cost:.2f}")
+            self.total_cost = discount_coupon.apply_discount(
+                self.original_total, 
+                nightly_rate=nightly_rate, 
+                nights=nights
+            )
+            discount_coupon.use_coupon()
+            print(f"   Coupon '{discount_coupon.code}' applied! Saved: ${self.original_total - self.total_cost:.2f}")
     
     def __str__(self):
         coupon_text = ""
@@ -272,9 +267,9 @@ class Hotel:
         room.is_occupied = True
         
         print("Reservation confirmed!")
-        print("Original total: ${reservation.original_total:.2f}")
-        print("Final total: ${reservation.total_cost:.2f}")
-        print("You saved: ${reservation.original_total - reservation.total_cost:.2f}")
+        print(f"Original total: ${reservation.original_total:.2f}")
+        print(f"Final total: ${reservation.total_cost:.2f}")
+        print(f"You saved: ${reservation.original_total - reservation.total_cost:.2f}")
         return reservation
     
     def check_out(self, reservation_id):
