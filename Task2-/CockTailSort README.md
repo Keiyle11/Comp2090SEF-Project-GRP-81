@@ -5,3 +5,6 @@ The Key Differences between the Bubble  and cocktail sort algorithms, is that th
 The code uses a predetermined array and sorts it with cocktail sort.
 ## Installation
 Simply install and run.
+
+## Video Demonstration
+https://www.youtube.com/watch?v=rJ6TXuSA0t4 at 2:28
