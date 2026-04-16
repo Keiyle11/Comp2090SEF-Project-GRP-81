@@ -7,6 +7,8 @@ The Room class is responsible for listing the room's internal details, such as i
 The Guest class is responsible for containing the details of guests, such as their name, contact info, email and id. 
 The reservation class is responsible for storing a guest, room, and check-in and check-out times to calculate the price at checkout. The Coupon class is responsible for applying discounts or free nights for guests.
 
+When making a reservation and adding the dates, make sure you use this format: YYYY-MM-DD (Include the dashes)
+
 ## Purpose
 This project's purpose is to simulate a real hotel management system and may also be used as an assistance with real hotels after being adjusted accordingly.
 
