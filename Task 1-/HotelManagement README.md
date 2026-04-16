@@ -1,4 +1,4 @@
-# Hotel Management System
+# Hotel Management System 🏨
 This is a Hotel Management system that allows the user to simulate a real Hotel system by adding guests, rooms and reservations and assigning them to their proper target. It even allows you to calculate the expenses of each guest when they check out.
 
 ## Function
@@ -13,5 +13,7 @@ This project's purpose is to simulate a real hotel management system and may als
 ## Installation
 To use this project, simply install and run.
 
-## User Guide
+## User Guide ⭐
 Once installed, the program is ready to be used immediately. Use the numbers to navigate the menu: 1 to create rooms, 2 to register a guest, 3 to make a reservation, 4 to show all rooms, 5 to show all available rooms, 6 to show all registered guests, 7 to check out a guest, 8 to view all reservations, 9 to give a coupon to a guest, 10 to show a guest's coupons and 0 to exit. 
+⬇️⬇️⬇️ Please refer to the video below for a deeper explanation ⬇️⬇️⬇️
+https://drive.google.com/file/d/1jIdXoUm1DBaNP-36epoJSuYy4DasL7ZG/view?usp=sharing
