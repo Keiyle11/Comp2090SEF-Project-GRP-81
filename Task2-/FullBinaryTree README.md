@@ -1,4 +1,4 @@
-# Strict Binary Tree
+# Full Binary Tree
 The Binary Tree is a data structure where each node can contain a value and a maximum of two children. These children would also have a maximum of two children. This data structure is efficient in data organisation, sorting, searching and more. However in this particular type of binary tree, the strict binary tree only allows a node to have 0 or 2 children.
 
 ## Sorting Algorithms Related to Binary Trees
