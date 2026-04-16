@@ -326,7 +326,7 @@ def main():
         print("3. Make Reservation")
         print("4. Show All Rooms")
         print("5. Show Available Rooms")
-        print("5. Show All Guests")
+        print("6. Show All Guests")
         print("7. Check Out")
         print("8. View All Reservations")
         print("9. Give Coupon to Guest")
