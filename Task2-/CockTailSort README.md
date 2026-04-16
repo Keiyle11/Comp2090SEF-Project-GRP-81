@@ -7,4 +7,4 @@ The code uses a predetermined array and sorts it with cocktail sort.
 Simply install and run.
 
 ## Video Demonstration
-https://www.youtube.com/watch?v=rJ6TXuSA0t4 at 2:28
+https://youtu.be/rJ6TXuSA0t4?si=PU8dvL_oRad7D6NH&t=147
