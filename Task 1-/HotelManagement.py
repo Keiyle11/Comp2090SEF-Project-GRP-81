@@ -207,6 +207,13 @@ class Hotel:
         for room in self.rooms:
             status = "Available" if not room.is_occupied else "Occupied"
             print(f"{room} - {status}")
+            
+    def show_all_guests(self):
+        print("\nAll Guests:")
+        if not self.guests:
+            print("No Guests Registered")
+        for guest in self.guests:
+            print(f"{guest}")
     
     def show_available_rooms(self):
         print("\nAvailable Rooms:")
@@ -319,10 +326,11 @@ def main():
         print("3. Make Reservation")
         print("4. Show All Rooms")
         print("5. Show Available Rooms")
-        print("6. Check Out")
-        print("7. View All Reservations")
-        print("8. Give Coupon to Guest")
-        print("9. Show Guest Coupons")
+        print("5. Show All Guests")
+        print("7. Check Out")
+        print("8. View All Reservations")
+        print("9. Give Coupon to Guest")
+        print("10. Show Guest Coupons")
         print("0. Exit")
         
         choice = input("\nEnter your choice: ")
@@ -394,8 +402,11 @@ def main():
         
         elif choice == "5":
             hotel.show_available_rooms()
-        
+            
         elif choice == "6":
+           hotel.show_all_guests()
+        
+        elif choice == "7":
             print("Check Out Guest:")
             try:
                 res_id = int(input("Reservation ID: "))
@@ -403,7 +414,7 @@ def main():
             except ValueError:
                 print("Invalid reservation ID")
         
-        elif choice == "7":
+        elif choice == "8":
             print("\nAll Reservations")
             if not hotel.reservations:
                 print("No reservations yet")
@@ -411,7 +422,7 @@ def main():
                 nights = (res.check_out - res.check_in).days
                 print(f"{res} - {nights} nights - Check-in: {res.check_in.date()}")
         
-        elif choice == "8":
+        elif choice == "9":
             try:
                 guest_id = int(input("Guest ID: "))
                 coupon_code = input("Coupon code to give: ").upper()
@@ -419,7 +430,7 @@ def main():
             except ValueError:
                 print("Invalid input!")
         
-        elif choice == "9":
+        elif choice == "10":
             try:
                 guest_id = int(input("Guest ID: "))
                 hotel.show_guest_coupons(guest_id)
