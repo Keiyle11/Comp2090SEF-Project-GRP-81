@@ -17,4 +17,5 @@ To use this project, simply install and run.
 Once installed, the program is ready to be used immediately. Use the numbers to navigate the menu: 1 to create rooms, 2 to register a guest, 3 to make a reservation, 4 to show all rooms, 5 to show all available rooms, 6 to show all registered guests, 7 to check out a guest, 8 to view all reservations, 9 to give a coupon to a guest, 10 to show a guest's coupons and 0 to exit. 
 
 ⬇️⬇️⬇️ Please refer to the video below for a deeper explanation ⬇️⬇️⬇️
+
 https://drive.google.com/file/d/1jIdXoUm1DBaNP-36epoJSuYy4DasL7ZG/view?usp=sharing
